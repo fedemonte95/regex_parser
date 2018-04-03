@@ -1,4 +1,5 @@
-from DFA import DFA as dfa
+from DFA import DFA
+import sys
 
 
 def read_file():
@@ -15,7 +16,8 @@ def read_file():
 
 
 if __name__ == "__main__":
-    read_file()
+    
+    #read_file()
     states = {0, 1, 2, 3}
     alphabet = {'a', 'b', 'c', 'd'}
     start_state = 0
@@ -37,9 +39,11 @@ if __name__ == "__main__":
     tf[(3, 'b')] = 2
     tf[(3, 'c')] = 3
     tf[(3, 'd')] = 0
-    d = dfa(states, alphabet, tf, start_state, accept_states)
+    d = DFA(states, alphabet, tf, start_state, accept_states)
     print("DFA result")
-    inp_program = list('abcdabcdab')
-
+    inp_program = list('aaaaaaaaaaaaaaaab')
     print(d.run_with_input_list(inp_program))
 
+    
+    #print 'Number of arguments:', len(sys.argv), 'arguments.'
+    #print 'Argument List:', str(sys.argv)

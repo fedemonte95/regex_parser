@@ -4,33 +4,39 @@ class DFA:
     """
     current_state = None
 
-    def __init__(self, states, alphabet, transition_function, start_state, accept_states):
+    def __init__(self, states, alphabet, start_state, accept_states):
         self.states = states
         self.alphabet = alphabet
-        self.transition_function = transition_function
         self.start_state = start_state
         self.accept_states = accept_states
         self.current_state = start_state
-        self.transition_func_dic = dict()
+        self.transition_function = dict()
+        self.add_transition_function()
         return
 
     def add_transition_function(self):
-        self.transition_func_dic[(0, 'a')] = 1
-        self.transition_func_dic[(0, 'b')] = 2
-        self.transition_func_dic[(0, 'c')] = 3
-        self.transition_func_dic[(0, 'd')] = 0
-        self.transition_func_dic[(1, 'a')] = 1
-        self.transition_func_dic[(1, 'b')] = 2
-        self.transition_func_dic[(1, 'c')] = 3
-        self.transition_func_dic[(1, 'd')] = 0
-        self.transition_func_dic[(2, 'a')] = 1
-        self.transition_func_dic[(2, 'b')] = 2
-        self.transition_func_dic[(2, 'c')] = 3
-        self.transition_func_dic[(2, 'd')] = 0
-        self.transition_func_dic[(3, 'a')] = 1
-        self.transition_func_dic[(3, 'b')] = 2
-        self.transition_func_dic[(3, 'c')] = 3
-        self.transition_func_dic[(3, 'd')] = 0
+        """
+            This function will add transition functions to your transition table (transition function dictionary in code)
+            params: 
+                * p_tuple
+                * value
+        """
+        self.transition_function[(0, 'a')] = 1
+        self.transition_function[(0, 'b')] = 2
+        self.transition_function[(0, 'c')] = 3
+        self.transition_function[(0, 'd')] = 0
+        self.transition_function[(1, 'a')] = 1
+        self.transition_function[(1, 'b')] = 2
+        self.transition_function[(1, 'c')] = 3
+        self.transition_function[(1, 'd')] = 0
+        self.transition_function[(2, 'a')] = 1
+        self.transition_function[(2, 'b')] = 2
+        self.transition_function[(2, 'c')] = 3
+        self.transition_function[(2, 'd')] = 0
+        self.transition_function[(3, 'a')] = 1
+        self.transition_function[(3, 'b')] = 2
+        self.transition_function[(3, 'c')] = 3
+        self.transition_function[(3, 'd')] = 0
         
     def transition_to_state_with_input(self, input_value):
         if (self.current_state, input_value) not in self.transition_function.keys():

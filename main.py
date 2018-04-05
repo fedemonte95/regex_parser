@@ -41,8 +41,15 @@ if __name__ == "__main__":
     tf[(3, 'd')] = 0
     d = DFA(states, alphabet, tf, start_state, accept_states)
     print("DFA result")
-    inp_program = list('aaaaaaaaaaaaaaaab')
+    inp_program = list('aaaaaaaaaaaaaa')
     print(d.run_with_input_list(inp_program))
+    d.add_transition_function()
+    print('el mio' ,d.transition_func_dic)
+    print('el del codigo',d.transition_function)
+    if d.transition_function == d.transition_func_dic:
+        print('son iguales')
+    else: 
+        print('no son iguales')
 
     
     #print 'Number of arguments:', len(sys.argv), 'arguments.'

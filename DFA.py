@@ -14,6 +14,24 @@ class DFA:
         self.transition_func_dic = dict()
         return
 
+    def add_transition_function(self):
+        self.transition_func_dic[(0, 'a')] = 1
+        self.transition_func_dic[(0, 'b')] = 2
+        self.transition_func_dic[(0, 'c')] = 3
+        self.transition_func_dic[(0, 'd')] = 0
+        self.transition_func_dic[(1, 'a')] = 1
+        self.transition_func_dic[(1, 'b')] = 2
+        self.transition_func_dic[(1, 'c')] = 3
+        self.transition_func_dic[(1, 'd')] = 0
+        self.transition_func_dic[(2, 'a')] = 1
+        self.transition_func_dic[(2, 'b')] = 2
+        self.transition_func_dic[(2, 'c')] = 3
+        self.transition_func_dic[(2, 'd')] = 0
+        self.transition_func_dic[(3, 'a')] = 1
+        self.transition_func_dic[(3, 'b')] = 2
+        self.transition_func_dic[(3, 'c')] = 3
+        self.transition_func_dic[(3, 'd')] = 0
+        
     def transition_to_state_with_input(self, input_value):
         if (self.current_state, input_value) not in self.transition_function.keys():
             self.current_state = None

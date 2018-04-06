@@ -26,7 +26,7 @@ if __name__ == "__main__":
     d = DFA(states, alphabet, start_state, accept_states)
 
     print("DFA result")
-    inp_program = list('aaaaaaaaaaaaaa')
+    inp_program = list('aa')
     print(d.run_with_input_list(inp_program))
     
     #print 'Number of arguments:', len(sys.argv), 'arguments.'
